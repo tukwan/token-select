@@ -46,7 +46,7 @@ export const TokenSelector = () => {
       </Button>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="bg-onyx border-slate rounded-lg p-6 pb-0">
+        <DialogContent className="bg-onyx border-slate rounded-lg p-6 pb-0 max-h-screen overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-xl font-bold">
               Select a Token

@@ -15,7 +15,7 @@ export const TOKENS = [
   },
   {
     symbol: "cbETH",
-    name: "Coinbase Wrapped Staked ETH",
+    name: "Coinbase Staked ETH",
     address: "0xBe9895146f7AF43049ca1c1AE358B0541Ea49704",
     icon: "/tokens/cbeth.png",
   },

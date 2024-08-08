@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: #e5e7eb;
+  background-color: #000;
+}
+
+.layout-background-image {
+  background-image: radial-gradient(
+      circle at top center,
+      #526e9710,
+      transparent
+    ),
+    url(/bg.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% auto;
+  background-clip: border-box;
+}
+
+@media (max-width: 1000px) {
+  .layout-background-image {
+    background-position: 0 0;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .layout-background-image {
+    background-size: 125%;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1000px) {
+  .layout-background-image {
+    background-size: 150%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+  .layout-background-image {
+    background-size: 200%;
+  }
+}
+
+@media (max-width: 600px) {
+  .layout-background-image {
+    background-size: 250%;
+  }
+}

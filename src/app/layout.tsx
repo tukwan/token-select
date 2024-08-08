@@ -10,8 +10,8 @@ import { Header } from "@/components/header"
 const baiJamjuree = Bai_Jamjuree({ subsets: ["latin"], weight: ["400", "500"] })
 
 export const metadata: Metadata = {
-  title: "Coin Select",
-  description: "Coin Select app",
+  title: "Token Select",
+  description: "Token Select App",
 }
 
 type Props = {
@@ -23,12 +23,16 @@ export default function RootLayout({ children }: Props) {
 
   return (
     <html lang="en">
-      <body
-        className={`${baiJamjuree.className} antialiased flex h-fit min-h-screen flex-col max-w-[calc(100vw - 0px] layout-background-image`}
-      >
+      <body className={`${baiJamjuree.className} antialiased`}>
         <Providers wagmiCookie={wagmiCookie}>
-          <Header />
-          <div className="">{children}</div>
+          <div className="layout-background-image min-h-screen flex flex-col">
+            <div className="max-w-screen-2xl mx-auto w-full">
+              <Header />
+              <main className="flex flex-col items-center w-full">
+                {children}
+              </main>
+            </div>
+          </div>
         </Providers>
       </body>
     </html>

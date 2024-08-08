@@ -3,8 +3,14 @@
 @tailwind utilities;
 
 body {
-  color: #e5e7eb;
+  @apply text-mist;
   background-color: #000;
+}
+
+button {
+  &:focus {
+    box-shadow: unset !important;
+  }
 }
 
 .layout-background-image {

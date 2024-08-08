@@ -1,3 +1,9 @@
-export default function CoinSelectPage() {
-  return <main>Hi</main>
+import { TokenSelector } from "@/components/token-selector/token-selector"
+
+export default function TokenSelectPage() {
+  return (
+    <div className="my-16">
+      <TokenSelector />
+    </div>
+  )
 }

@@ -8,6 +8,7 @@ export const rainbowTheme = merge(
     accentColorForeground: colors.slate,
     borderRadius: "medium",
     overlayBlur: "small",
+    fontStack: "system",
   }),
   {
     colors: {

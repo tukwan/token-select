@@ -6,7 +6,11 @@ This application allows users to select a token and connect a browser wallet (su
 
 - [https://token-select.vercel.app](https://token-select.vercel.app)
 
-<img width="600" src="https://github.com/user-attachments/assets/f9eb723f-0dc3-422f-85c9-4933d93ad546">
+#### Dekstop
+<img width="600" src="https://github.com/user-attachments/assets/af65fce0-0486-4719-b2fe-ad868b6860f2">
+
+#### Mobile
+<img width="300" src="https://github.com/user-attachments/assets/02b25854-1ba0-4043-9a4b-eea6d45c6e2b">
 
 ## Features
 

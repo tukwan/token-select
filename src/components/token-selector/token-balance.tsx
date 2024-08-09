@@ -1,9 +1,11 @@
 import { useBalance } from "wagmi"
 import type { Token } from "./token-constants"
 
+type Address = `0x${string}`
+
 type TokenBalanceProps = {
   token: Token
-  address: `0x${string}` | undefined
+  address: Address | undefined
   onSelect: () => void
 }
 
@@ -14,19 +16,15 @@ export const TokenBalance = ({
 }: TokenBalanceProps) => {
   const { data: balance } = useBalance({
     address,
-    token: token.address as `0x${string}`,
+    token: token.address as Address,
   })
 
-  const balanceText = address
-    ? balance
-      ? parseFloat(balance.formatted).toFixed(4)
-      : ""
-    : "Not Connected"
+  const tokenBalance = formatTokenBalance(address, balance)
 
   return (
     <div
       onClick={onSelect}
-      className="flex justify-between items-center p-3 cursor-pointer hover:bg-iron transition ease-in-out -mx-6 px-6"
+      className="flex justify-between items-center px-6 py-3 cursor-pointer hover:bg-iron transition ease-in-out"
     >
       <div className="flex items-center">
         <img src={token.icon} alt={token.name} className="w-6 h-6 mr-3" />
@@ -35,7 +33,18 @@ export const TokenBalance = ({
           <span className="text-gray-400 text-sm">{token.symbol}</span>
         </div>
       </div>
-      <span className="text-white">{balanceText}</span>
+      <span className="text-white">{tokenBalance}</span>
     </div>
   )
+}
+
+const formatTokenBalance = (
+  address: Address | undefined,
+  balance: { formatted: string } | undefined
+): string => {
+  if (!address) return "Not Connected"
+  if (!balance) return ""
+
+  const formattedBalance = parseFloat(balance.formatted).toFixed(4)
+  return formattedBalance === "0.0000" ? "0.0" : formattedBalance
 }

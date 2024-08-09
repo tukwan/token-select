@@ -28,17 +28,17 @@ export const TokenSelector = () => {
     <>
       <Button
         onClick={() => setIsOpen(true)}
-        className="bg-mist text-sm md:text-base font-medium text-black transition ease-in-out hover:bg-gray-50 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg"
+        className="text-sm md:text-base font-medium transition ease-in-out px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg min-w-[134px] bg-black border border-slate text-white"
       >
         {selectedToken ? (
-          <div className="flex items-center">
+          <div className="flex items-center w-full">
             <img
               src={selectedToken.icon}
               alt={selectedToken.name}
               className="w-6 h-6 mr-2"
             />
             <span>{selectedToken.symbol}</span>
-            <span className="ml-2 mb-2">⌄</span>
+            <span className="mb-2 text-right flex-grow">⌄</span>
           </div>
         ) : (
           "Select Token"
@@ -46,8 +46,8 @@ export const TokenSelector = () => {
       </Button>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="bg-onyx border-slate rounded-lg p-6 pb-0 max-h-screen overflow-y-auto">
-          <DialogHeader>
+        <DialogContent className="bg-onyx border-slate rounded-lg p-0 mt-8 sm:mt-0 gap-0">
+          <DialogHeader className="p-6 pb-3 border-b border-b-slate">
             <DialogTitle className="text-xl font-bold">
               Select a Token
             </DialogTitle>
@@ -55,7 +55,7 @@ export const TokenSelector = () => {
               Choose a token to continue
             </DialogDescription>
           </DialogHeader>
-          <div className="mt-4">
+          <div className="max-h-[calc(100vh-10rem)] overflow-y-auto">
             {TOKENS.map((token) => (
               <TokenBalance
                 key={token.symbol}
